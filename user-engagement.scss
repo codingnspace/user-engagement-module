@@ -1,0 +1,212 @@
+
+.user-engagement {
+
+  &--single {
+    cursor: pointer;
+    background-color: $white;
+    box-shadow: $active-shadow;
+    padding: 0;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+
+    @include ie-styles {
+      box-shadow: $active-shadow-ie;
+    }
+
+
+    &:not(:last-of-type) {
+      margin-bottom: 4px;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 4px;
+    }
+
+    &:not(.user-engagement--large) {
+      &:hover,
+      &:focus {
+        @include bp(medium) {
+          width: 105%;
+          margin-bottom: -2px;
+          margin-top: -2px;
+          position: relative;
+          z-index: 1;
+          border-width: 4px;
+        }
+      }
+
+      @include bp(medium) {
+        transition-property: width, margin-bottom, border-width;
+        transition-duration: .25s;
+        border-top: 0 solid $white;
+        border-bottom: 0 solid $white;
+        flex-direction: row;
+        padding: 24px 32px 24px 24px;
+  
+        &:not(:last-of-type) {
+          margin-bottom: 2px;
+        }
+  
+        &:not(:first-of-type) {
+          margin-top: 2px;
+        }
+      }
+
+      .user-engagement--countdown {
+        @include font-size(12px);
+      }
+
+      .userengagement-img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-right: 0;
+  
+        @include bp(medium) {
+          max-width: 264px;
+          display: block;
+          margin-right: 24px;
+        }
+      }
+
+      .user-engagement--content {
+        padding: 24px;
+    
+        @include bp(medium) {
+          max-width: 241px;
+          padding: 0;
+        }
+    
+        @media screen and (min-width: 900px) {
+          max-width: 341px;
+        }
+    
+        @include bp(large) {
+          max-width: 410px;
+        }
+    
+        @media screen and (min-width: 1200px) {
+          max-width: 510px;
+        }
+    
+        @include bp(xlarge) {
+          max-width: 664px;
+        }
+      }
+
+      .user-engagement--cta {
+        &::before {
+          bottom: -3px;
+        }
+
+        margin-top: 16px;
+        display: inline-block;
+      }
+    }
+  }
+
+  &--label {
+    color: $gray-dark;
+    margin-bottom: 8px;
+  }
+
+  &--description {
+    margin-bottom: 4px;
+  }
+
+  &--legal {
+    color: $gray-dark;
+    
+    @include bp(large) {
+      margin-top: 0;
+      order: 1;
+    }
+  }
+
+  .user-engagement--countdown {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: calculate-font-weight('bold');
+
+    * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+
+    &-left {
+      display: none;
+      @media screen and (min-width: 414px) {
+        display: inline-block;
+      }
+    }
+  }
+
+  .user-engagement--date-type {
+    &.pipe-after {
+      &:after {
+        display: none;
+        margin-right: 3px;
+
+        @media screen and (min-width: 414px) {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &--large {
+    cursor: default;
+    .user-engagement--heading {
+      margin-top: 0;
+      margin-bottom: 4px;
+
+      @include bp(medium) {
+        padding-right: 20px;
+      }
+
+      @include bp(large) {
+        margin-bottom: 20px;
+        &.column {
+          padding-right: 40px;
+        }
+      }
+    }
+
+    .button {
+      margin-top: 10px;
+
+      @include bp(large) {
+        margin-top: 0;
+      }
+    }
+
+    .user-engagement--content {
+      padding: 24px;
+    }
+
+    .user-engagement--cta-wrapper {
+      @include bp(large) {
+        justify-content: flex-start;
+      }
+
+      .user-engagement--cta {
+        max-width: inherit;
+        &.disabled {
+          pointer-events: none;
+        }
+      }
+    }
+    .userengagement-img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-right: 0;
+      max-height: 571px;
+    }
+  }
+
+}
